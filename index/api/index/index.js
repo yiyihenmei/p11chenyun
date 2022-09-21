@@ -14,7 +14,7 @@ const getTitle = async()=>{
  })
  return data
 }
-// 首页热门推荐数据
+// 首页热门推荐数据 / 首页近期上新数据
 const getRecommend =async()=>{
 	let data=await api({
 		url:'/course/api/course/search',
@@ -22,7 +22,6 @@ const getRecommend =async()=>{
 	})
 	return data
 }
-
 
 export {
 	getSwiper,

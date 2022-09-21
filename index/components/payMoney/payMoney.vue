@@ -1,14 +1,14 @@
 <template>
-	<!-- 热门推荐标题 -->
+	<!-- 付费精品标题 -->
 	<view class="hot">
-		<p class="titleHot">热门推荐</p>
-		<view class="textHot">HOT</view>
+		<p class="titleHot">付费精品</p>
+		<view class="textHot">NICE</view>
 		<p class="all">全部</p>
 		<view class="boxx"></view>
 	</view>
-	<!-- 热门推荐内容 -->
+	<!-- 付费精品内容 -->
 	<view class="contentHot">
-		<view class="scroll-view-item" v-for="item in ListHot"
+		<view class="scroll-view-item" v-for="item in payList"
 			:key="item.id">
 			<image :src="item.mainImage" mode=""></image>
 			<view class="right">
@@ -22,21 +22,22 @@
 </template>
 
 <script>
-	import {getRecommend} from '../../api/index/index.js'
-	import {reactive,toRefs} from 'vue'
+	// import {getRecommend} from '../../api/index/index.js'
+	// import {reactive,toRefs} from 'vue'
 	export default{
-		setup(){
-			const List=reactive({
-				ListHot:[]
-			})
-			getRecommend().then(res=>{
-				// console.log(res)
-				List.ListHot=res.data.records.slice(0,5)
-			})
-			return {
-				...toRefs(List)
-			}
-		}
+		props:['payList']
+		// setup(){
+		// 	const List=reactive({
+		// 		payList:[]
+		// 	})
+		// 	getRecommend().then(res=>{
+		// 		// console.log(res);
+		// 		List.payList=res.data.records
+		// 	})
+		// 	return {
+		// 		...toRefs(List)
+		// 	}
+		// }
 	}
 	
 </script>

@@ -17,7 +17,7 @@
 				getadd:[]
 			})
 			getTitle().then(res=>{
-				console.log(res);
+				// console.log(res);
 				data.getadd=res.data.slice(0,8)
 			})
 			return {

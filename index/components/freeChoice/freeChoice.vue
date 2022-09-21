@@ -1,8 +1,8 @@
 <template>
-	<!-- 近期上新 -->
+	<!-- 免费精选 -->
 	<view class="newFuture">
-		<p class="titleNew">近期上新</p>
-		<view class="textNew">NEW</view>
+		<p class="titleNew">免费精选</p>
+		<view class="textNew">FREE</view>
 		<p class="all">全部</p>
 		<view class="boxx"></view>
 	</view>
@@ -10,9 +10,9 @@
 	<!-- scroll-view -->
 	<scroll-view  scroll-x="true">
 		<view class="box2">
-			<view  class="scroll-view-item" v-for="item in newFutureList" :key="item.id">
-				<view class="leftbox">
-					<image :src="item.mainImage" mode=""></image>
+			<view  class="scroll-view-item" v-for="item in choiceList" :key="item.id">
+				<image :src="item.mainImage" mode=""></image>
+				<view class="rightbox">
 					<p class="title">{{item.title}}</p>
 					<p class="uname">{{item.nickName}}</p>
 					<span class="money">{{item.priceDiscount}}</span>
@@ -29,11 +29,11 @@
 	export default {
 		setup(){
 			const List=reactive({
-				newFutureList:[]
+				choiceList:[]
 			})
 			getRecommend().then(res=>{
 				// console.log(res)
-				List.newFutureList=res.data.records
+				List.choiceList=res.data.records
 			})
 			return {
 				...toRefs(List)
@@ -52,37 +52,38 @@
 	}
 	.uname{
 		padding-left: 10px;
-		padding-top: 5px;
+		padding-top: 8px;
 	}
 	.title{
 		font-weight: 600;
 		padding-left: 10px;
 	}
 	.scroll-view-item{
-		width:200%;
-		height: 200px;
+		display: flex;
+		width:325px;
+		height: 110px;
 	}
 	.box2{
+		width:660px;
 		display: flex;
-		flex-wrap: nowrap;
+	    flex-wrap: wrap;
 	}
 	
-	.leftbox{
+	.rightbox{
 		width: 160px;
-		height:200px;
+		height:100px;
 		border-radius: 25rpx;
-		box-shadow: 2px 5px 5px #ccc;
-		margin-left: 10px;
+		margin-left: 5px;
 		margin-top: 10px;
 	}
 	image{
-		width: 90%;
-		height: 40%;
-		margin-top: 8px;
-		margin-left: 7px;
-		border: 1px solid #ccc;
+		width: 150px;
+		height: 90px;
+		margin-top: 5px;
+		margin-left: 10px;
 		border-radius: 25rpx;
 	}
+	
 	.newFuture {
 		width: 100%;
 		margin-top: 30px;
