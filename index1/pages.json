@@ -1,0 +1,81 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+			
+		},
+		{
+			"path": "pages/cate/cate",
+			"style": {
+
+				"navigationStyle": "custom"
+			}
+			
+		},
+		{
+			"path": "pages/reading/reading",
+			"style": {
+				"navigationStyle": "custom"
+			}
+			
+		},
+		{
+			"path": "pages/question/question",
+			"style": {
+				"navigationStyle": "custom"
+			}
+			
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+			}
+			
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": true,
+		"onReachBottomDistance": 150
+	},
+	"tabBar": {
+		"list":[{
+			"iconPath": "/static/tab/index.png",
+			"pagePath": "pages/index/index",
+			"selectedIconPath": "/static/tab/index-active.png",
+			"text":"首页"
+		},
+		{
+			"iconPath": "/static/tab/category.png",
+			"pagePath": "pages/cate/cate",
+			"selectedIconPath": "/static/tab/category-active.png",
+			"text":"分类"
+		},
+		{
+			"iconPath": "/static/tab/article.png",
+			"pagePath": "pages/reading/reading",
+			"selectedIconPath": "/static/tab/article-active.png",
+			"text":"阅读"
+		},
+		{
+			"iconPath": "/static/tab/question.png",
+			"pagePath": "pages/question/question",
+			"selectedIconPath": "/static/tab/question-active.png",
+			"text":"问答"
+		},
+		{
+			"iconPath": "/static/tab/my.png",
+			"pagePath": "pages/my/my",
+			"selectedIconPath": "/static/tab/my-active.png",
+			"text":"我的"
+		}
+		]
+	}
+
+}
